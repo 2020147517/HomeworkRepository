@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="main.css"> 
+        <title>LAB2</title>
+    </head>
+
+    <body>
+        <h1>Welcome to INTERNET-PROGRAMMING SHOP</h1>
+        <form autocomplete="on" action="" method="">
+        <p><a href="login.html" style="text-decoration: black;">로그인</a> <span class="underline">회원가입</span></p>
+        <hr>
+        <br>
+
+        <p>개인정보 (필수)</p>
+
+        <p><label>이름 :
+            <input type = "text" name = "이름" placeholder="이름을 입력하세요" autofocus autocomplete="off" /></label></p>
+
+        <p><label>생일 :
+            <input type = "date" name = "birthday" placeholder="연도-월-일" onfocus="(this.type='date')" autocomplete="off" /></label></p>   
+
+        <p><label>학년 :
+            <input type = "number" name = "학년" min="1" max="4" autocomplete="off" /></label></p> 
+
+        <p><label>전화번호 :
+            <input type = "tel" name = "tel" placeholder="(###)###-####" pattern="\(\d{3}\)\d{3}-\d{4}" autocomplete="off" required  /></label></p>
+
+        <p><label>유저 아이디 :
+            <input type = "text" name = "아이디" placeholder="아이디를 입력하세요" /></label></p>
+
+        <p><label>비밀번호 :
+            <input type = "password" name = "password" id="password" placeholder="비밀번호 입력하세요" /></label></p>
+            
+        <p><label>비밀번호 확인 :
+            <input type = "password" name = "confirm_password" id="confirm_password" placeholder="비밀번호 확인" /></label></p>        
+
+
+        <p><input type=submit name=submit value="Signup" />
+        <input type=reset name=reset value="Cancel" /></p>
+        <hr>
+
+        </form>
+
+    </body>
+
+</html>
