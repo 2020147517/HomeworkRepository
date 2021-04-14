@@ -1,0 +1,148 @@
+body {
+    background-color: white;
+  }
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1020px;
+    margin: auto;
+    background-color: black;
+}
+
+.flex-container > div {
+
+    background-color: blue;
+    margin: 70px;
+    padding: 150px;
+    font-size: 20px;
+}
+  
+.enlargement {
+    transition: width 2s, height 2s;
+}
+
+.enlargement:hover{
+    width: 400px;
+    height: 500px;
+}
+
+h1 {
+    max-width: 1020px;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    text-align: left;
+    margin: auto;
+    
+    animation-duration: 2s;
+    animation-delay: 0s;
+  }
+
+.underline {
+    text-decoration: underline overline red;
+
+    
+}
+
+p {
+    max-width: 1020px;
+    font-family: verdana;
+    font-size: 20px;
+    margin: auto;
+  } 
+
+section{
+    column-count: 2;
+    column-gap: 25px;
+    column-rule: 1px outset black;
+    max-width: 1020px;
+    margin: auto;
+}  
+
+button {
+    border: none;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}  
+
+input[type="submit"] {
+    color: black;
+    background-color: lightgreen;
+    font-size: 16px;
+    border: none;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
+
+input[type="reset"] {
+    color: black;
+    background-color: red;
+    font-size: 16px;
+    border: none;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button{
+    color: black;
+    background-color: red;
+    font-size: 16px;
+    border: none;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+hr {
+    border: none;
+    height: 1.5px;
+    color: #333; 
+    background-color: #333; 
+}
+
+.center {
+    margin: auto;
+}
+
+.floatTable {
+    float: left;
+}
+
+table{
+    margin-right: 1%;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.movingbox{   
+    animation-name: move;
+    animation-duration: 2s;
+
+}
+
+@keyframes move{
+    0%      {margin-left: 57%;}
+    100%    {margin-left: 16%;} 
+}
+
