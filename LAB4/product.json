@@ -1,0 +1,153 @@
+[
+    {
+        "name" : "potato",
+        "price" : 1500,
+        "image" : "potato.jpg",
+        "type" : "vegetables"
+
+    },
+
+    {
+        "name" : "sweet potato",
+        "price" : 2000,
+        "image" : "sweetpotato.jpg",
+        "type" : "vegetables"
+
+    },
+
+    {
+        "name" : "cabbage",
+        "price" : 2000,
+        "image" : "cabbage.jpg",
+        "type" : "vegetables"
+
+    },
+
+    {
+        "name" : "carrot",
+        "price" : 2200,
+        "image" : "carrot.jpg",
+        "type" : "vegetables"
+
+    },
+
+    {
+        "name" : "garlic",
+        "price" : 500,
+        "image" : "garlic.jpg",
+        "type" : "vegetables"
+
+    },
+
+    {
+        "name" : "ginger",
+        "price" : 700,
+        "image" : "ginger.jpg",
+        "type" : "vegetables"
+
+    },
+
+    {
+        "name" : "kale",
+        "price" : 1200,
+        "image" : "kale.jpg",
+        "type" : "vegetables"
+
+    },
+
+    {
+        "name" : "asparagus",
+        "price" : 1500,
+        "image" : "asparagus.jpg",
+        "type" : "vegetables"
+
+    },
+
+    {
+        "name" : "peas",
+        "price" : 400,
+        "image" : "peas.jpg",
+        "type" : "vegetables"
+
+    },
+
+    {
+        "name" : "spinach",
+        "price" : 1200,
+        "image" : "spinach.jpg",
+        "type" : "vegetables"
+
+    },
+
+    {
+        "name" : "chicken",
+        "price" : 10000,
+        "image" : "chicken.jpg",
+        "type" : "meat"
+
+    },
+
+    {
+        "name" : "pork",
+        "price" : 15000,
+        "image" : "pork.jpg",
+        "type" : "meat"
+
+    },
+
+    {
+        "name" : "beef",
+        "price" : 25000,
+        "image" : "beef.jpg",
+        "type" : "meat"
+
+    },
+
+    {
+        "name" : "apple",
+        "price" : 1000,
+        "image" : "apple.jpg",
+        "type" : "fruits"
+
+    },
+
+    {
+        "name" : "pear",
+        "price" : 3000,
+        "image" : "pear.jpg",
+        "type" : "fruits"
+
+    },
+
+    {
+        "name" : "grapes",
+        "price" : 1200,
+        "image" : "grapes.jpg",
+        "type" : "fruits"
+
+    },
+
+    {
+        "name" : "orange",
+        "price" : 1400,
+        "image" : "orange.jpg",
+        "type" : "fruits"
+
+    },
+
+    {
+        "name" : "cherry",
+        "price" : 1700,
+        "image" : "cherry.jpg",
+        "type" : "fruits"
+
+    },
+
+    {
+        "name" : "banana",
+        "price" : 1500,
+        "image" : "banana.jpg",
+        "type" : "fruits"
+
+    }
+]

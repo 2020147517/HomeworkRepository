@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="main.css"> 
+        <title>LAB4</title>
+        
+        <script>
+            fetch('product.json').then(function(response) {
+                return response.json();
+            }).then(function(json) {
+                let products = json;
+                initialize(products);
+            }).catch(function(err) {
+                console.log('Fetch problem: ' + err.message);
+            });
+
+            function initialize(products) {
+                const category = document.querySelector('#category');
+                const searchTerm = document.querySelector('#searchTerm');
+                const searchBtn = document.querySelector('button');
+                const main = document.querySelector('main');
+            
+
+                let lastCategory = category.value;
+                let lastSearch = '';
+                let categoryGroup;
+                let finalGroup;
+
+                finalGroup = products;
+                updateDisplay();
+
+                categoryGroup = [];
+                finalGroup = [];
+                searchBtn.onclick = selectCategory;
+
+
+                function selectCategory(e) {
+                    e.preventDefault();
+
+                    categoryGroup = [];
+                    finalGroup = [];
+
+                    if(category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
+                        return;
+                    } else {
+                        lastCategory = category.value;
+                        lastSearch = searchTerm.value.trim();
+
+                        if(category.value === 'All') {
+                            categoryGroup = products;
+                            selectProducts();
+                        } else {
+                            let lowerCaseType = category.value.toLowerCase();
+                            for(let i = 0; i < products.length ; i++) {
+                                if(products[i].type === lowerCaseType) {
+                                    categoryGroup.push(products[i]);
+                                }
+                            }
+
+                            selectProducts();
+                        }
+                    }
+                }
+
+            
+
+                function selectProducts() {
+                    if(searchTerm.value.trim() === '') {
+                        finalGroup = categoryGroup;
+                        updateDisplay();
+                    } else{
+                        let lowerCaseSearchTerm = searchTerm.value.trim().toLowerCase();
+                        for(let i = 0; i < categoryGroup.length; i++) {
+                            if(categoryGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
+                                finalGroup.push(categoryGroup[i]);
+                            }
+                        }
+                        updateDisplay();
+                    }
+                }
+
+
+                function updateDisplay() {
+                    while (main.firstchild) {
+                        main.removeChild(main.firstchild);
+                    }   
+
+                    if(finalGroup.length === 0) {
+                        const para = document.createElement('p');
+                        para.textContent = 'No results to display!';
+                        main.appendChild(para);
+                    } else {
+                        for(let i = 0; i < finalGroup.length; i++) {
+                            fetchBlob(finalGroup[i]);
+                        }
+                    }
+                }
+
+
+                function fetchBlob(product) {
+                    let url = 'images/' + product.image;
+                    fetch(url).then(function(response) {
+                        return response.blob();
+                    }).then(function(blob) {
+                        let objectURL = URL.createObjectURL(blob);
+                        showProduct(objectURL, product);
+                    });
+                }
+
+
+                function showProduct(objectURL, product) {
+
+                    const section = document.createElement('section');
+                    const heading = document.createElement('h2');
+                    const para = document.createElement('p');
+                    const image = document.createElement('img');
+
+                    section.setAttribute('class', product.type);
+                    heading.textContent = product.name.replace(product.name.charAt(0), product.name.charAt(0).toUpperCase());
+                    para.textContent = '$' + product.price.toFixed(2);
+
+                    image.src = objectURL;
+                    image.alt = product.name;
+
+                    main.appendChild(section);
+                    section.appendChild(heading);
+                    section.appendChild(para);
+                    section.appendChild(image);               
+                }
+            }
+
+
+            let counter = 1;
+            document.addEventListener('DOMContentLoaded', load);
+            window.scrolled = () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    load();
+                }
+            };
+            
+            function load() {
+                const start = counter;
+                const end = start + 1;
+                counter = end + 1;
+                fetch('')
+            }
+
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1 class="movingbox">안녕하세요 마켓컬리입니다.</h1>
+        <form autocomplete="on" action="" method="">
+        <p><span class="underline">메인페이지</span> <a href="login.html" style="text-decoration: black;">로그인</a> <a href="signup.html" style="text-decoration: black;">회원가입</a></p>
+        <hr>
+        <br>
+        <br>
+        </form>
+
+        <div>
+            <aside>
+                <form>
+                    <div>
+                        <label for="category">Choose a category:</label>
+                        <select id="category">
+                            <option selected>All</option>
+                            <option>Vegetables</option>
+                            <option>Meat</option>
+                            <option>Fruits</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="searchTerm">Enter search term:</label>
+                        <input type="text" id="searchTerm" placeholder="e.g. pork">
+                    </div>
+                    <div>
+                        <button>Filter results</button>
+                    </div>
+                </form>
+            </aside>
+            <main>
+
+            </main>
+        </div>
+    </body>
+</html>
